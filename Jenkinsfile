@@ -1,5 +1,5 @@
 node {
-    
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5')), pipelineTriggers([githubPush()])])
     def mavenhome = tool name:'maven3.9.4'
 stage ('checkout code'){
    git credentialsId: 'f921670b-d7cd-49c4-8aff-05478ff7a2bf', url: 'https://github.com/validevops555/maven-web-application.git'
