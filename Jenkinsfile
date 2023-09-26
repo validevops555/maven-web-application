@@ -19,7 +19,7 @@ stage ('Uploading artifacts into artifact repository'){
 
 stage ('Deploying application'){
   sshagent(['50345cfd-ae6a-4eac-aa1d-9feb37f88769']) {
-  sh "scp -o StrictHostkeyChecking=no target/maven-web-application.war ubuntu@13.233.255.118:/opt/tomcat9/webapps/"
+  sh "scp -o StrictHostkeyChecking=no target/maven-web-application.war ubuntu@3.7.70.42:/opt/tomcat9/webapps/"
   }    
 }
 }
