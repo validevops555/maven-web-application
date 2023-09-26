@@ -1,4 +1,4 @@
-node {
+node ('slaves') {
     properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '5', numToKeepStr: '5')), pipelineTriggers([githubPush()])])
     def mavenhome = tool name:'maven3.9.4'
 stage ('checkout code'){
